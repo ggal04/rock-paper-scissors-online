@@ -36,38 +36,77 @@ function getPlayerChoice() {
   return insensitiveChoice;
 }
 
-for (i = 0; i < 3; i++) {
-  var computerSelection = getComputerChoice();
-  var playerSelection = getPlayerChoice();
-
+function playRound(playerSelection, computerSelection) {
+  let message;
   if (computerSelection === playerSelection) {
-    console.log("Tie! No winners here.");
+    message = "Tie! No winners here.";
+    return message;
   } else {
     switch (playerSelection) {
       case "rock":
         if (computerSelection === "paper") {
-          console.log("Oh no! Your rock loses to paper.");
+          message = "Oh no! Your rock loses to paper.";
         } else {
-          console.log("Your rock wins against scissors! Lets go!");
+          message = "Your rock wins against scissors! Lets go!";
         }
+        return message;
         break;
       case "paper":
         if (computerSelection === "scissors") {
-          console.log("Oh no! Your paper loses to scissors.");
+          message = "Oh no! Your paper loses to scissors.";
         } else {
-          console.log("Your paper wins against rock! Lets go!");
+          message = "Your paper wins against rock! Lets go!";
         }
+        return message;
         break;
       case "scissors":
         if (computerSelection === "rock") {
-          console.log("Oh no! Your scissors lose to rock.");
+          message = "Oh no! Your scissors lose to rock.";
         } else {
-          console.log("Your scissors win against paper! Lets go!");
+          message = "Your scissors win against paper! Lets go!";
         }
+        return message;
         break;
       default:
-        console.log("Watch your inputs, man!");
+        message = "Watch your inputs, man!";
+        return message;
         break;
     }
   }
 }
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+  let message;
+
+  while (playerScore !== 3 && computerScore !== 3) {
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerChoice();
+    message = playRound(playerSelection, computerSelection);
+    console.log(message);
+    if (
+      message === "Your rock wins against scissors! Lets go!" ||
+      message === "Your paper wins against rock! Lets go!" ||
+      message === "Your scissors win against paper! Lets go!"
+    ) {
+      playerScore++;
+    } else if (
+      message === "Tie! No winners here." ||
+      message === "Watch your inputs, man!"
+    ) {
+      playerScore = playerScore;
+    } else {
+      computerScore++;
+    }
+    console.log(playerScore);
+    console.log(computerScore);
+  }
+  if (playerScore === 3) {
+    console.log("You win!");
+  } else {
+    console.log("You lose!");
+  }
+}
+
+game();
