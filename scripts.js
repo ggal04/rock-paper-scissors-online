@@ -21,21 +21,6 @@ function getComputerChoice() {
   }
 }
 
-function getPlayerChoice() {
-  let choice;
-  let insensitiveChoice;
-  choice = prompt("Choose Rock, Paper or Scissors: ");
-  insensitiveChoice = choice.toLowerCase();
-  if (
-    insensitiveChoice !== "rock" &&
-    insensitiveChoice !== "paper" &&
-    insensitiveChoice !== "scissors"
-  ) {
-    insensitiveChoice = "invalid";
-  }
-  return insensitiveChoice;
-}
-
 function playRound(playerSelection, computerSelection) {
   let message;
   if (computerSelection === playerSelection) {
@@ -75,38 +60,47 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  let message;
+let playerScore = 0;
+let computerScore = 0;
+let message;
 
-  while (playerScore !== 3 && computerScore !== 3) {
-    let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
-    message = playRound(playerSelection, computerSelection);
-    console.log(message);
-    if (
-      message === "Your rock wins against scissors! Lets go!" ||
-      message === "Your paper wins against rock! Lets go!" ||
-      message === "Your scissors win against paper! Lets go!"
-    ) {
-      playerScore++;
-    } else if (
-      message === "Tie! No winners here." ||
-      message === "Watch your inputs, man!"
-    ) {
-      playerScore = playerScore;
-    } else {
-      computerScore++;
-    }
-    console.log(playerScore);
-    console.log(computerScore);
-  }
-  if (playerScore === 3) {
-    console.log("You win!");
+const btn1 = document.querySelector(".btn1");
+btn1.addEventListener("click", () => {
+  message = playRound("rock", getComputerChoice);
+  checkScore(message);
+  console.log(playerScore);
+  console.log(computerScore);
+});
+
+const btn2 = document.querySelector(".btn2");
+btn2.addEventListener("click", () => {
+  message = playRound("paper", getComputerChoice);
+  checkScore(message);
+  console.log(playerScore);
+  console.log(computerScore);
+});
+
+const btn3 = document.querySelector(".btn3");
+btn3.addEventListener("click", () => {
+  message = playRound("scissors", getComputerChoice);
+  checkScore(message);
+  console.log(playerScore);
+  console.log(computerScore);
+});
+
+function checkScore(message) {
+  if (
+    message === "Your scissors win against paper! Lets go!" ||
+    message === "Your paper wins against rock! Lets go!" ||
+    message === "Your rock wins against scissors! Lets go!"
+  ) {
+    playerScore++;
+  } else if (
+    message === "Tie! No winners here." ||
+    message === "Watch your inputs, man!"
+  ) {
+    playerScore = playerScore;
   } else {
-    console.log("You lose!");
+    computerScore++;
   }
 }
-
-game(); 

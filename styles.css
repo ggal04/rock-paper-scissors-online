@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@700&display=swap');
 
+body {
+    margin: 0px;
+}
 .Header {
     font-family: 'Agdasima', sans-serif;
     font-size: 2rem;
@@ -10,6 +13,6 @@
     margin: 0px;
 }
 .Title{
-    margin: 1rem;
+    margin: 0.5rem;
     color: #9882AC
 }
