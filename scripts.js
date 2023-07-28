@@ -60,34 +60,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-let playerScore = 0;
-let computerScore = 0;
-let message;
-
-const btn1 = document.querySelector(".btn1");
-btn1.addEventListener("click", () => {
-  message = playRound("rock", getComputerChoice);
-  checkScore(message);
-  console.log(playerScore);
-  console.log(computerScore);
-});
-
-const btn2 = document.querySelector(".btn2");
-btn2.addEventListener("click", () => {
-  message = playRound("paper", getComputerChoice);
-  checkScore(message);
-  console.log(playerScore);
-  console.log(computerScore);
-});
-
-const btn3 = document.querySelector(".btn3");
-btn3.addEventListener("click", () => {
-  message = playRound("scissors", getComputerChoice);
-  checkScore(message);
-  console.log(playerScore);
-  console.log(computerScore);
-});
-
 function checkScore(message) {
   if (
     message === "Your scissors win against paper! Lets go!" ||
@@ -95,6 +67,9 @@ function checkScore(message) {
     message === "Your rock wins against scissors! Lets go!"
   ) {
     playerScore++;
+    document.querySelector('.displayPlayer')
+    PlayerTrack.textContent = playerScore;
+    PlayerContainer.appendChild(PlayerTrack);
   } else if (
     message === "Tie! No winners here." ||
     message === "Watch your inputs, man!"
@@ -102,5 +77,52 @@ function checkScore(message) {
     playerScore = playerScore;
   } else {
     computerScore++;
+    document.querySelector('.displayComputer');
+    CompTrack.textContent = computerScore;
+    CompContainer.appendChild(CompTrack);
   }
 }
+
+let playerScore = 0;
+let computerScore = 0;
+let message;
+
+const CompContainer = document.querySelector('.displayComputer');
+const CompTrack = document.createElement("div");
+CompTrack.textContent = computerScore;
+CompContainer.appendChild(CompTrack);
+
+const PlayerContainer = document.querySelector('.displayPlayer')
+const PlayerTrack = document.createElement("div");
+PlayerTrack.textContent = playerScore;
+PlayerContainer.appendChild(PlayerTrack);
+
+const btn1 = document.querySelector(".btn1");
+btn1.addEventListener("click", () => {
+  message = playRound("rock", getComputerChoice());
+  checkScore(message);
+  console.log(playerScore);
+  console.log(computerScore);
+});
+
+const btn2 = document.querySelector(".btn2");
+btn2.addEventListener("click", () => {
+  message = playRound("paper", getComputerChoice());
+  checkScore(message);
+  console.log(playerScore);
+  console.log(computerScore);
+});
+
+const btn3 = document.querySelector(".btn3");
+btn3.addEventListener("click", () => {
+  message = playRound("scissors", getComputerChoice());
+  checkScore(message);
+  console.log(playerScore);
+  console.log(computerScore);
+});
+
+
+
+
+
+
