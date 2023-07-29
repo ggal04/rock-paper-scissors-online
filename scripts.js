@@ -86,6 +86,9 @@ function checkScore(message) {
     message === "Your paper wins against rock! Lets go!" ||
     message === "Your rock wins against scissors! Lets go!"
   ) {
+    document.querySelector('.message')
+    msg.textContent = message;
+    msgContainer.appendChild(msg);
     playerScore++;
     document.querySelector('.displayPlayer')
     PlayerTrack.textContent = playerScore;
@@ -95,8 +98,13 @@ function checkScore(message) {
     message === "Tie! No winners here." ||
     message === "Watch your inputs, man!"
   ) {
-    playerScore = playerScore;
+    document.querySelector('.message')
+    msg.textContent = message;
+    msgContainer.appendChild(msg);
   } else {
+    document.querySelector('.message')
+    msg.textContent = message;
+    msgContainer.appendChild(msg);
     computerScore++;
     document.querySelector('.displayComputer');
     CompTrack.textContent = computerScore;
@@ -118,6 +126,11 @@ const PlayerContainer = document.querySelector('.displayPlayer')
 const PlayerTrack = document.createElement("div");
 PlayerTrack.textContent = playerScore;
 PlayerContainer.appendChild(PlayerTrack);
+
+const msgContainer = document.querySelector('.message')
+const msg = document.createElement("div");
+msg.textContent = "Click any button to play!";
+msgContainer.appendChild(msg);
 
 const btn1 = document.querySelector(".btn1");
 btn1.addEventListener("click", () => {
