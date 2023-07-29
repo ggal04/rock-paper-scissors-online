@@ -65,6 +65,9 @@ function checkComputerScore(computerScore) {
     document.querySelector('.btn1').disabled = true;
     document.querySelector('.btn2').disabled = true;
     document.querySelector('.btn3').disabled = true;
+    document.querySelector('.message')
+    msg.textContent = "The computer wins! Better luck next time :(s";
+    msgContainer.appendChild(msg);
     return false;
   }
   else return true;
@@ -75,6 +78,9 @@ function checkPlayerScore(playerScore) {
     document.querySelector('.btn1').disabled = true;
     document.querySelector('.btn2').disabled = true;
     document.querySelector('.btn3').disabled = true;
+    document.querySelector('.message')
+    msg.textContent = "You have beaten the computer! You are the new RPS champion ;)";
+    msgContainer.appendChild(msg);
     return false;
   }
   else return true;
