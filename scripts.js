@@ -60,21 +60,21 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function checkComputerScore(computerScore) {
-  if (computerScore >= 3){
+function checkComputerScore(computerScore, winCondition) {
+  if (computerScore >= winCondition){
     document.querySelector('.btn1').disabled = true;
     document.querySelector('.btn2').disabled = true;
     document.querySelector('.btn3').disabled = true;
     document.querySelector('.message')
-    msg.textContent = "The computer wins! Better luck next time :(s";
+    msg.textContent = "The computer wins! Better luck next time :(";
     msgContainer.appendChild(msg);
     return false;
   }
   else return true;
 }
 
-function checkPlayerScore(playerScore) {
-  if (playerScore >= 3){
+function checkPlayerScore(playerScore, winCondition) {
+  if (playerScore >= winCondition){
     document.querySelector('.btn1').disabled = true;
     document.querySelector('.btn2').disabled = true;
     document.querySelector('.btn3').disabled = true;
@@ -99,7 +99,7 @@ function checkScore(message) {
     document.querySelector('.displayPlayer')
     PlayerTrack.textContent = playerScore;
     PlayerContainer.appendChild(PlayerTrack);
-    checkPlayerScore(playerScore)
+    checkPlayerScore(playerScore, winCondition)
   } else if (
     message === "Tie! No winners here." ||
     message === "Watch your inputs, man!"
@@ -115,13 +115,14 @@ function checkScore(message) {
     document.querySelector('.displayComputer');
     CompTrack.textContent = computerScore;
     CompContainer.appendChild(CompTrack);
-    checkComputerScore(computerScore)
+    checkComputerScore(computerScore, winCondition)
   }
 }
 
 let playerScore = 0;
 let computerScore = 0;
 let message;
+let winCondition = 5;
 
 const CompContainer = document.querySelector('.displayComputer');
 const CompTrack = document.createElement("div");
