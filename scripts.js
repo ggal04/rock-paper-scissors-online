@@ -60,6 +60,26 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+function checkComputerScore(computerScore) {
+  if (computerScore >= 3){
+    document.querySelector('.btn1').disabled = true;
+    document.querySelector('.btn2').disabled = true;
+    document.querySelector('.btn3').disabled = true;
+    return false;
+  }
+  else return true;
+}
+
+function checkPlayerScore(playerScore) {
+  if (playerScore >= 3){
+    document.querySelector('.btn1').disabled = true;
+    document.querySelector('.btn2').disabled = true;
+    document.querySelector('.btn3').disabled = true;
+    return false;
+  }
+  else return true;
+}
+
 function checkScore(message) {
   if (
     message === "Your scissors win against paper! Lets go!" ||
@@ -70,6 +90,7 @@ function checkScore(message) {
     document.querySelector('.displayPlayer')
     PlayerTrack.textContent = playerScore;
     PlayerContainer.appendChild(PlayerTrack);
+    checkPlayerScore(playerScore)
   } else if (
     message === "Tie! No winners here." ||
     message === "Watch your inputs, man!"
@@ -80,6 +101,7 @@ function checkScore(message) {
     document.querySelector('.displayComputer');
     CompTrack.textContent = computerScore;
     CompContainer.appendChild(CompTrack);
+    checkComputerScore(computerScore)
   }
 }
 
