@@ -142,7 +142,7 @@ PlayerContainer.appendChild(PlayerTrack);
 const msgContainer = document.querySelector(".message");
 const msg = document.createElement("div");
 msg.classList.add('msg');
-msg.textContent = "Click any button to play!";
+msg.textContent = "Click any button to play! First to 5 points wins.";
 msgContainer.appendChild(msg);
 
 const btn1 = document.querySelector(".btn1");

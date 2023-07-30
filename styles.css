@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@700&display=swap");
 
 /* 
+Color Palette
+
+
 #0C0910
 #8884FF
 #D7BCE8
@@ -10,38 +12,12 @@
 */
 body {
     margin: 0px;
-    background-color: #0C0910;
-}
-.Header {
-    font-family: 'Agdasima', sans-serif;
-    font-size: 2.5rem;
-    background-color: #0C0910;
+    background-color: #0c0910;
     display: flex;
-    flex-direction: row;
-    padding: 16px;
-    margin: 0px;
-}
-.Title{
-    margin: 0.5rem;
-    color: #8884FF
-}
-
-.counter {
-    font-family: 'Agdasima', sans-serif;
-    font-size: 1.5rem;
-    color: #8884FF
-}
-
-.scores {
-    font-family: 'Agdasima', sans-serif;
-    font-size: 1.5rem;
-    color: #E8CEE4
-}
-
-.msg {
-    font-family: 'Agdasima', sans-serif;
-    font-size: 2rem;
-    color: #FDE2FF
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
 }
 
 .btn {
@@ -51,10 +27,94 @@ body {
     border-radius: 1rem;
     border-width: 0.3rem;
     text-decoration: none;
-    border-color: #D7BCE8;
-    background-color: #0C0910;
+    border-color: #d7bce8;
+    background-color: #0c0910;
     cursor: pointer;
-    transition: all .07s ease;
+    transition: all 0.07s ease;
+}
+
+.counter {
+    font-family: "Agdasima", sans-serif;
+    font-size: 2.5rem;
+    color: #8884ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.displays {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer {
+    background-color: #0c0910;
+    font-size: 1rem;
+    font-family: "Helvetica", sans-serif;
+    color: #291e3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+} 
+
+.footertext {
+    margin: 0px;
+}
+
+.Header {
+    font-family: "Agdasima", sans-serif;
+    font-size: 2.5rem;
+    background-color: #0c0910;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    margin: 0px;
+    flex-wrap: wrap;
+}
+
+.msg {
+    font-family: "Agdasima", sans-serif;
+    font-size: 3.5rem;
+    color: #fde2ff;
+    margin:2rem;
+}
+
+.scores {
+    font-family: "Agdasima", sans-serif;
+    font-size: 6rem;
+    color: #e8cee4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    flex-wrap: wrap;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.Title {
+    margin: 0.5rem;
+    color: #8884ff;
 }
 
 .trans {
@@ -64,8 +124,12 @@ body {
     border-radius: 1rem;
     border-width: 0.5rem;
     text-decoration: none;
-    border-color: #8884FF;
+    border-color: #8884ff;
     background-color: #1d1627;
     cursor: pointer;
-    transition: all .07s ease;
+    transition: all 0.07s ease;
+}
+
+.displayPlayer, .displayComputer{
+    width: 220px;
 }
