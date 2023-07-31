@@ -5,7 +5,7 @@ function getComputerChoice() {
     switch (randomNumber) {
         case 1:
             choice = "rock";
-            computer.textContent= "🪨"
+            computer.textContent= "🗿"
             computerChoice.appendChild(computer);
             return choice;
             break;
@@ -164,7 +164,7 @@ btn1.classList.add('btn');
 btn1.addEventListener("click", () => {
     message = playRound("rock", getComputerChoice());
     checkScore(message);
-    user.textContent= "🪨"
+    user.textContent= "🗿"
     userChoice.appendChild(user);
 });
 btn1.addEventListener("mouseover", () => {
