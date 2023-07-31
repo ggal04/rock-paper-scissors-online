@@ -92,6 +92,11 @@ body {
     margin:2rem;
 }
 
+.pick {
+    font-size: 3.5rem;
+    margin:2rem;
+}
+
 .scores {
     font-family: "Agdasima", sans-serif;
     font-size: 6rem;

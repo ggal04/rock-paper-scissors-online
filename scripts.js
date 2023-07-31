@@ -5,14 +5,20 @@ function getComputerChoice() {
     switch (randomNumber) {
         case 1:
             choice = "rock";
+            computer.textContent= "🪨"
+            computerChoice.appendChild(computer);
             return choice;
             break;
         case 2:
             choice = "paper";
+            computer.textContent= "📄"
+            computerChoice.appendChild(computer);
             return choice;
             break;
         case 3:
             choice = "scissors";
+            computer.textContent= "✂️"
+            computerChoice.appendChild(computer);
             return choice;
             break;
         default:
@@ -145,13 +151,21 @@ msg.classList.add('msg');
 msg.textContent = "Click any button to play! First to 5 points wins.";
 msgContainer.appendChild(msg);
 
+const userChoice = document.querySelector(".myplay");
+const user = document.createElement("div");
+user.classList.add('pick');
+
+const computerChoice = document.querySelector(".enemyplay");
+const computer = document.createElement("div");
+computer.classList.add('pick');
+
 const btn1 = document.querySelector(".btn1");
 btn1.classList.add('btn');
 btn1.addEventListener("click", () => {
     message = playRound("rock", getComputerChoice());
     checkScore(message);
-    console.log(playerScore);
-    console.log(computerScore);
+    user.textContent= "🪨"
+    userChoice.appendChild(user);
 });
 btn1.addEventListener("mouseover", () => {
     btn1.classList.add('trans');
@@ -165,8 +179,8 @@ btn2.classList.add('btn');
 btn2.addEventListener("click", () => {
     message = playRound("paper", getComputerChoice());
     checkScore(message);
-    console.log(playerScore);
-    console.log(computerScore);
+    user.textContent= "📄"
+    userChoice.appendChild(user);
 });
 btn2.addEventListener("mouseover", () => {
     btn2.classList.add('trans');
@@ -180,8 +194,8 @@ btn3.classList.add('btn');
 btn3.addEventListener("click", () => {
     message = playRound("scissors", getComputerChoice());
     checkScore(message);
-    console.log(playerScore);
-    console.log(computerScore);
+    user.textContent= "✂️"
+    userChoice.appendChild(user);
 });
 btn3.addEventListener("mouseover", () => {
     btn3.classList.add('trans');
