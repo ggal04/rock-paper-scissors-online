@@ -5,19 +5,19 @@ function getComputerChoice() {
     switch (randomNumber) {
         case 1:
             choice = "rock";
-            computer.textContent= "🗿"
+            computer.textContent = "🗿"
             computerChoice.appendChild(computer);
             return choice;
             break;
         case 2:
             choice = "paper";
-            computer.textContent= "📄"
+            computer.textContent = "📄"
             computerChoice.appendChild(computer);
             return choice;
             break;
         case 3:
             choice = "scissors";
-            computer.textContent= "✂️"
+            computer.textContent = "✂️"
             computerChoice.appendChild(computer);
             return choice;
             break;
@@ -101,26 +101,26 @@ function checkScore(message) {
 
 
 function checkComputerScore(computerScore, winCondition) {
-  if (computerScore >= winCondition) {
-      document.querySelector(".btn1").disabled = true;
-      document.querySelector(".btn2").disabled = true;
-      document.querySelector(".btn3").disabled = true;
-      document.querySelector(".message");
-      msg.textContent = "The computer wins! Better luck next time :(";
-      msgContainer.appendChild(msg);
-  }
+    if (computerScore >= winCondition) {
+        document.querySelector(".btn1").disabled = true;
+        document.querySelector(".btn2").disabled = true;
+        document.querySelector(".btn3").disabled = true;
+        document.querySelector(".message");
+        msg.textContent = "The computer wins! Better luck next time :(";
+        msgContainer.appendChild(msg);
+    }
 }
 
 function checkPlayerScore(playerScore, winCondition) {
-  if (playerScore >= winCondition) {
-      document.querySelector(".btn1").disabled = true;
-      document.querySelector(".btn2").disabled = true;
-      document.querySelector(".btn3").disabled = true;
-      document.querySelector(".message");
-      msg.textContent =
-          "You have beaten the computer! You are the new champion ;)";
-      msgContainer.appendChild(msg);
-  }
+    if (playerScore >= winCondition) {
+        document.querySelector(".btn1").disabled = true;
+        document.querySelector(".btn2").disabled = true;
+        document.querySelector(".btn3").disabled = true;
+        document.querySelector(".message");
+        msg.textContent =
+            "You have beaten the computer! You are the new champion ;)";
+        msgContainer.appendChild(msg);
+    }
 }
 
 
@@ -164,7 +164,7 @@ btn1.classList.add('btn');
 btn1.addEventListener("click", () => {
     message = playRound("rock", getComputerChoice());
     checkScore(message);
-    user.textContent= "🗿"
+    user.textContent = "🗿"
     userChoice.appendChild(user);
 });
 btn1.addEventListener("mouseover", () => {
@@ -179,7 +179,7 @@ btn2.classList.add('btn');
 btn2.addEventListener("click", () => {
     message = playRound("paper", getComputerChoice());
     checkScore(message);
-    user.textContent= "📄"
+    user.textContent = "📄"
     userChoice.appendChild(user);
 });
 btn2.addEventListener("mouseover", () => {
@@ -194,7 +194,7 @@ btn3.classList.add('btn');
 btn3.addEventListener("click", () => {
     message = playRound("scissors", getComputerChoice());
     checkScore(message);
-    user.textContent= "✂️"
+    user.textContent = "✂️"
     userChoice.appendChild(user);
 });
 btn3.addEventListener("mouseover", () => {
